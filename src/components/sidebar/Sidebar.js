@@ -1,0 +1,35 @@
+import React from 'react'
+import './sidebar.css'
+import Avatar from '@material-ui/core/Avatar';
+
+
+export const Sidebar = () => {
+    return (
+        <div className="sidebar">
+            <div className="sidebar_top">
+                <img src="https://media-exp1.licdn.com/dms/image/C4D16AQHWPd86umKAew/profile-displaybackgroundimage-shrink_200_800/0/1604838172903?e=1615420800&v=beta&t=-72yuvdX3Wm3JZgSqE9ilJ8mMPeoqkAD34QX3J1RnDc" alt="bg-img" />
+                <Avatar className="sidebar_avatar" />
+                <h2>mahmoud gonim</h2>
+                <h4>Passionate software engineer specifying in web </h4>
+            </div>
+
+            <div className="sidebar_status">
+                <div className="sidebar_start">
+                    <p>Who Viewed You</p>
+                    <p className="sidebar_startNumber">
+                        2.568
+                    </p>
+                </div>
+                <div className="sidebar_start">
+                    <p>Views on posts</p>
+                    <p className="sidebar_startNumber">
+                        7.895
+                    </p>
+                </div>
+            </div>
+            <div className="sidebar_buttons">
+                <p>Recent</p>
+            </div>
+        </div>
+    )
+}
