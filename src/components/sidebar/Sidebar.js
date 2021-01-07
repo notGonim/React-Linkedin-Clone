@@ -17,7 +17,7 @@ export const Sidebar = () => {
         <div className="sidebar">
             <div className="sidebar_top">
                 <img src="https://media-exp1.licdn.com/dms/image/C4D16AQHWPd86umKAew/profile-displaybackgroundimage-shrink_200_800/0/1604838172903?e=1615420800&v=beta&t=-72yuvdX3Wm3JZgSqE9ilJ8mMPeoqkAD34QX3J1RnDc" alt="bg-img" />
-                <Avatar className="sidebar_avatar" />
+                <Avatar className="sidebar_avatar" src="https://avatarfiles.alphacoders.com/128/thumb-128984.png" />
                 <h2>mahmoud gonim</h2>
                 <h4>Passionate software engineer specifying in web </h4>
             </div>
