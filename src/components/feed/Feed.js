@@ -10,7 +10,7 @@ import { Post } from '../posts/Post';
 import { db } from '../firebase';
 import firebase from 'firebase'
 import { useSelector } from 'react-redux';
-
+import FlipMove from 'react-flip-move'
 export const Feed = () => {
     const { user } = useSelector(state => state.user)
 
@@ -62,11 +62,13 @@ export const Feed = () => {
                     <InputOption title="Write article" Icon={CalendarViewDayIcon} color="#7FC15E" />
                 </div>
             </div>
-            {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
-                <Post key={id} name={name} description={description}
-                    message={message} photoUrl={photoUrl} />
-            ))}
 
+            <FlipMove>
+                {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+                    <Post key={id} name={name} description={description}
+                        message={message} photoUrl={photoUrl} />
+                ))}
+            </FlipMove>
         </div>
     )
 }
