@@ -8,9 +8,10 @@ import { Login } from './components/login/Login';
 import { auth } from './components/firebase';
 import { useEffect, useState } from 'react';
 import { LogInAction, LogOutAction } from './actions/UserAction';
+import { Widget } from './components/widget/Widget';
 
 function App() {
-  const {user} = useSelector(state => state.user)
+  const { user } = useSelector(state => state.user)
   const dispatch = useDispatch()
   const [logged, setLogged] = useState(false)
 
@@ -41,6 +42,7 @@ function App() {
         (<div className="app_body">
           <Sidebar />
           <Feed />
+          <Widget />
         </div>)
       }
     </div>

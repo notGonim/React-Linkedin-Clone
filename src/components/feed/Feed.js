@@ -34,7 +34,7 @@ export const Feed = () => {
         e.preventDefault()
         db.collection("posts").add(
             {
-                name: user.displayName,
+                name: user.displayName ,
                 description: 'just a test',
                 message: input,
                 photoUrl: user.photoURL || '',
