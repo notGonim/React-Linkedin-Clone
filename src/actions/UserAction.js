@@ -1,7 +1,13 @@
 
 
-export const LogInAction = () => (dispatch) => {
+export const LogInAction = ({ email, uid, displayName, photoURL }) => (dispatch) => {
 
+    dispatch({
+        type: "LOGIN",
+        payload: {
+            user: { email, uid, displayName, photoURL }
+        }
+    })
 
 
 }

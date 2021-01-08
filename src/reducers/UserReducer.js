@@ -12,7 +12,8 @@ const UserReducer = (state = intialState, action) => {
             };
         case "LOGIN":
             return {
-                ...state
+                ...state,
+                user: action.payLoad.user
             }
         default:
             return { ...state };
