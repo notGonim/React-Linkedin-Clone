@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { LogInAction } from '../../actions/UserAction'
 import { auth } from '../firebase'
@@ -13,7 +13,6 @@ export const Login = () => {
     const dispatch = useDispatch()
 
     const register = () => {
-
         if (!name) {
             return alert('Please enter your name')
         }
@@ -27,16 +26,30 @@ export const Login = () => {
                         email: userAuth.user.email,
                         uid: userAuth.user.uid,
                         displayName: name,
-                        photoURL: profilePic
+                        photoURL: userAuth.user.photoURL
                     }))
                 })
             }).catch(err => {
-                alert(err.message)
+                alert(err)
             })
     }
     const loginToApp = (e) => {
         e.preventDefault()
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userAuth) => {
+                dispatch(LogInAction(
+                    {
+                        email: userAuth.user.email,
+                        uid: userAuth.user.uid,
+                        displayName: userAuth.user.displayName,
+                        photoURL: userAuth.user.photoURL
+                    }
+                ))
+            }).catch(err => alert(err))
+
     }
+
+
     return (
         <div className="login">
             <img src="https://blog-assets.hootsuite.com/wp-content/uploads/2025/05/linkedin-for-business-9-620x151.png"

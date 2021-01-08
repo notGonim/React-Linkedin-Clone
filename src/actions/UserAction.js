@@ -4,12 +4,10 @@ export const LogInAction = ({ email, uid, displayName, photoURL }) => (dispatch)
 
     dispatch({
         type: "LOGIN",
-        payload: {
+        payLoad: {
             user: { email, uid, displayName, photoURL }
         }
     })
-
-
 }
 
 export const LogOutAction = () => (dispatch) => {
